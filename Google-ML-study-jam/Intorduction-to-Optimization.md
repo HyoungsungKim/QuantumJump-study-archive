@@ -14,7 +14,7 @@ Learn how to
 ## Defining ML Models
 
 Optimization always requires a standard by which to say we are improving -> loss function  
-How gradient descent is like trying to find the bottom of a hill defiend by the loss function?  
+How gradient descent is like trying to find the bottom of a hill defined by the loss function?  
 
 ### Reviewing exactly what an ML model is and where parameters fit into the equation
 
