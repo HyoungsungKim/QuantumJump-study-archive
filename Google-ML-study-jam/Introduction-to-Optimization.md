@@ -72,7 +72,7 @@ Often the first step to modeling data is to look at the data to ***verify that t
   
 ***How do we know which criterion is good?***
 
-- Least squares regression : Process for determining the best weights
+- ***Least squares regression*** : Process for determining the best weights
 
 But It is only work up to a certain scale. For example ***Once start using really big data sets***, the computation required to analytically solve this problem becomes impractical.  
 
