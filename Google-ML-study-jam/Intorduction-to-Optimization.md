@@ -48,12 +48,12 @@ The simples way to encode class membership is with a binary. Either you are a me
 
 Of course in many cases categorical variables can take more than two values using the decision boundary.  
 The decision boundary is intended not just to be descriptive of the current data. It is intended to be predictive of unseen data.  
-*** This property of extending to unseen examples is called generalization, and it is essential to ML models ***
+***This property of extending to unseen examples is called generalization, and it is essential to ML models***
 
 ### Which one can be a ML problem
 
 Which one could be a label in our model?  
-*** What i should have intuitions about are when the information is available relative to when we want to actually make predictions. ***
+***What i should have intuitions about are when the information is available relative to when we want to actually make predictions.***
 If we selected label, we have to consider it is continuous  
 
 > Classification and Regression which one?  
@@ -66,17 +66,17 @@ If we selected label, we have to consider it is continuous
 > Predicting a price of house -> Regression (output is 0 ~ 1,000,000,000)  
 > Predicting a spam mail or not -> Classification (output is yes(1) or no(0))
 
-Often the first step to modeling data is to look at the data to *** verify that there is some signal and that it's not all noise. ***
+Often the first step to modeling data is to look at the data to ***verify that there is some signal and that it's not all noise.***
 
 - Underfitting : Model a non-linear function with a linear model is called underfitting.
   
-*** How do we know which criterion is good? ***
+***How do we know which criterion is good?***
 
 - Least squares regression : Process for determining the best weights
 
-But It is only work up to a certain scale. For example *** Once start using really big data sets ***, the computation required to analytically solve this problem becomes impractical.  
+But It is only work up to a certain scale. For example ***Once start using really big data sets***, the computation required to analytically solve this problem becomes impractical.  
 
-Need *** Gradient descent ***  
+Need ***Gradient descent***  
 
 - What loss function do? : We will need to somehow generalize from the quality of a prediction for a single data point, which is simply the error of that prediction, to a number that captures the quality of a group of predictions.
 
