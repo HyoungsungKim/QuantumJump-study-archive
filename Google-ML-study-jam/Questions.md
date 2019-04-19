@@ -66,7 +66,7 @@ If neurons in layer are increased, expression can be variety. For example, Let's
 ## 10. when do i have to increase neuron or layer
 
 -> Decide a number of neurons or layers based on a paper which are suggesting a result what i want to do.  
-***Good artists cop, great artists steal*** -> Impressive sentence  
+***Good artists copy, great artists steal*** -> Impressive sentence  
 
 ## 11. What is a difference Training set, validation set and validation set
 
