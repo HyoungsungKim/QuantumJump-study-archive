@@ -23,7 +23,7 @@ We need to reframe the problem. Instead of searching for the perfect loss functi
 - harder to understand | - Easier to understand
 - Indirectly connected to business goals | - Directly connected to business goals
 
-Example of Loss function : Cross entropy, RMSE  (loss metrics)
+Example of Loss function : Cross entropy, RMSE (loss metrics)
 Example of Performance Metrics : Precision, Accuracy, Recall(True positive / (False positive + True Positive)) (performance metrics)
 Performance metrics have two benefits over loss functions.
 
