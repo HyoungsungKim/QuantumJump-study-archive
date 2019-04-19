@@ -67,3 +67,7 @@ If have a lot of data, use the approach of having a completely independent held-
 If Don't have that much data, use the cross-validation approach.  
 
 ---
+
+## Sampling 
+
+Set 80 percent of the data are in the training data set and the others are in test and validation.
