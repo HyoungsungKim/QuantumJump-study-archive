@@ -71,7 +71,48 @@ $$
 - graph that all of possible edges are connected (= clique)
   - clique include complete subgraph
 
+### Walk, trail, path, cycle, girth
 
+- Walk : List of vertices and edges
+  - example) v_0, e_1, e_2, ... , e_k, v_k
+  - The length of walk is k
+  - ***Closed walk*** : Walk which are start point and end point is same
+- Trail : Walk with no repeated edge
+  - Vertices can be repeated
+- Path : Trail with no repeated vertices
+  - Walk with no repeated vertices and trail
+- Cycle : ***Trail*** whose the only repeated vertex is the initial vertex and end vertex
+  - ***Cycle is closed walk where vertices and edges are not repeated***
+- Circuit : Closed walk where vertices can repeat, but not edges
+- Girth : A length of the smallest cycle
+- The length of walk, trail, path or cycle : Its number of edges
 
+#### ***Lemma*** : Every u, v-walk contains a u, v-path
 
+- u에서 v로 도달하는 walk가 있으면 u-v path가 존재
 
+### Bipartite graphs
+
+#### ***Lemma*** : Every ***closed*** odd walk contains an odd cycle
+
+- P(k) : Every (2k + 1) closed walk contains an odd cycle
+- If we could prove that P(k) is true for all k = 0, 1, 2, ..., then we prove Lemma
+  - Let's divide walks as 2 parts l_1 and l_2 (l_1 + l_2 = 2k + 1)
+  - ***Only even + odd number can be a odd number, Therefore one of l_1 or l_2 is odd length walk***
+- Is the above lemma true when we replace "odd" to "even"?
+  - No!
+
+- P(l) : Length of u-v walk
+- If P(n) is true for n < l then p(l) is true
+
+#### Definition of bipartition
+
+- Definition : A bipartition of G is a specification of two disjoint independent sets in G whose union is V(G)
+
+> Graph의 인접하지 않은 vertices의 집합
+
+- Theorem : A graph is bipartite ***if and only if*** it has no odd cycle
+
+> Bipartite graph : 2가지 색을 사용하여 그래프의 인접 vertex를 다른색으로 칠할 수 있음
+
+- By theorem, we can prove graph is bipartite or not by suggesting odd cycle.
