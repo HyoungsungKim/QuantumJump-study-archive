@@ -73,9 +73,9 @@ $$
 
 ### Walk, trail, path, cycle, girth
 
-- Walk : List of vertices and edges
+- Walk : ***List of vertices and edges***
   - example) v_0, e_1, e_2, ... , e_k, v_k
-  - The length of walk is k
+  - The length of walk is k(the number of edges)
   - ***Closed walk*** : Walk which are start point and end point is same
 - Trail : Walk with no repeated edge
   - Vertices can be repeated
@@ -100,7 +100,9 @@ $$
   - Let's divide walks as 2 parts l_1 and l_2 (l_1 + l_2 = 2k + 1)
   - ***Only even + odd number can be a odd number, Therefore one of l_1 or l_2 is odd length walk***
 - Is the above lemma true when we replace "odd" to "even"?
+  - Every closed even walk contains an even walk?
   - No!
+  - v_1 - e - v_2 : even node but odd walk
 
 - P(l) : Length of u-v walk
 - If P(n) is true for n < l then p(l) is true
