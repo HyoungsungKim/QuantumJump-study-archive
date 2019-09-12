@@ -85,7 +85,7 @@ $$
   - ***Cycle is closed walk where vertices and edges are not repeated***
 - Circuit : Closed walk where vertices can repeat, but not edges
 - Girth : A length of the smallest cycle
-- The length of walk, trail, path or cycle : Its number of edges
+- ***The length of walk, trail, path or cycle : Its number of edges***
 
 #### ***Lemma*** : Every u, v-walk contains a u, v-path
 
@@ -95,15 +95,24 @@ $$
 
 #### ***Lemma*** : Every ***closed*** odd walk contains an odd cycle
 
+- Walk : List of vertices and edges
+  - Length of walk is the number of edge
+- Cycle : Closed walk where vertices and edges are not repeated
 - P(k) : Every (2k + 1) closed walk contains an odd cycle
 - If we could prove that P(k) is true for all k = 0, 1, 2, ..., then we prove Lemma
-  - Let's divide walks as 2 parts l_1 and l_2 (l_1 + l_2 = 2k + 1)
-  - ***Only even + odd number can be a odd number, Therefore one of l_1 or l_2 is odd length walk***
+  - Length 1 closed walk : 1 vertex and 1 edge(loop) => v - e - v
+  - Let's divide walks as 2 parts $l_1$ and $l_2$ $(l_1 + l_2 = 2k + 1)$
+  - ***Only even + odd number can be a odd number, Therefore one of $l_1$ or $l_2$ is odd length walk***
 - Is the above lemma true when we replace "odd" to "even"?
   - Every closed even walk contains an even walk?
   - No!
-  - v_1 - e - v_2 : even node but odd walk
-
+  - $v_1 - e - v_2$ : even node but even walk ([e, e] repeat e 2 times)
+  - $v_1 - e - v_2 - e - v_1$ : even length walk, no cycle
+  - $v_1 - e_1 - v_2 - e_2 - v_1$ : even node, even walk ([e1, e2])
+    - even length, even cycle
+  - Therefore not every even closed walk doesn't contain cycle
+  - If even walk does not contain repeated edges, then it can contain cycle
+    (Read book - 24p 1.2.16. Remark)
 - P(l) : Length of u-v walk
 - If P(n) is true for n < l then p(l) is true
 
@@ -117,4 +126,81 @@ $$
 
 > Bipartite graph : 2가지 색을 사용하여 그래프의 인접 vertex를 다른색으로 칠할 수 있음
 
-- By theorem, we can prove graph is bipartite or not by suggesting odd cycle.
+- By theorem, ***we can prove graph is bipartite graph or not by suggesting odd cycle.***
+  - If there is a odd cycle, then it is not bipartite graph
+
+#### Relationship of complete graph and bipartite graph
+
+- ***The complete graph $K_n$ can be expresses as the union of k bipartite graphs if and only if $n <= 2^k$***
+
+> Complete graph : Simple undirected graph in which every pair of distinct vertices is connected by a unique edge.(서로 다른 두 꼭지점이 반드시 하나의 변으로 연결된 그래프)
+
+Proof)
+
+- When k = 1, k= 2, bipartite is trivial. Because there is no odd cycle
+- Induction Step $k > 1$ :
+  - Suppose first that $K_n = G_1 \cup G_2 \cup ... \cup G_k$, where each $G_i$ is bipartite.
+  - We partition the vertex set into two sets X, Y such that $G_k$ has no edge within X or within Y. 
+  - ***The union of the other k - 1 bipartite subgraphs must cover the complete subgraphs induced by X and by Y.***
+  - Applying the induction hypothesis to each yields $|X| <= 2^{k-1}$ and $|Y| <= 2^{k-1}$, So $N <= 2^{K-1} + 2^{K-1} = 2^k$
+- Conversely, suppose that $n <= 2^{k-1}$.
+  - We partition the vertex set into subsets X, Y, each of size at most $2^{k-1}$ 
+  - By induction hypothesis, we can cover the complete subgraph induced by either subset with k - 1 bipartite subgraphs.
+  - The union of i-th such subgraph on X with the i-th such subgraph on Y is a bipartite graph.
+  - Hence we obtain k - 1 bipartite graphs whose union consists of the complete subgraphs induced by X and Y.
+  - The remaining edges are those of the biclique with bipartition X, Y. Letting this be the kth bipartite subgraph completes the construction.
+
+[The complete graph $K_n$  can be expressed as the union of *k*  bipartite graphs iff *n*≤$2^k$](https://math.stackexchange.com/questions/2336855/the-complete-graph-k-n-can-be-expressed-as-the-union-of-k-bipartite-graphs-i)
+
+## Eulerian circuit
+
+### Topology review
+
+- Path : Sequence of edges
+- Circuit : Path which has same start point and end point 
+- Cycle : Circuit which doesn't have repeated vertices
+  - Path which has same start point, end point and doesn't have repeated vertices
+- Trail : A walk which doesn't have repeated edges
+
+### Definition of Eulerian
+
+- A graph is ***Euler*** if it has a closed trail containing all edges. 
+  (중복 없이 closed edges 가지면 오일러 그래프 - 한붓그리기)
+- Eulerian circuit or Eulerian trail in a graph is a circuit or trail containing all the edges
+  - Even graph : A graph with ***vertex degrees all even***
+  - Odd graph : A graph with ***vertex degrees all odd***
+- ***Maximal path(Lemma)*** : If graph is finite, then maximal paths exist.
+
+#### Lemma : If every vertex of a graph G has degree at least 2, then G contains a cycle
+
+#### Theorem : A graph G is Eulerian
+
+- Nontrivial : any connected~
+
+- Theorem : A graph G is Eulerian iff it has at most one nontrivial component and its vertices all have even degree
+
+- Necessity
+
+  - Suppose that G has an Eulerian circuit C.
+  - Each passage of C through a vertex uses two incident(부속) edges, and the first edge is paired with the last at the first vertex
+  - Hence every vertex has even degree. Also, two edges can be in the same trail only when they lie in the same component, so there is at most one nontrivial component
+
+- Sufficient
+
+  - Assuming We obtain an Eulerian circuit(circuit : 시작점과 종료점이 같음) using induction on ***the number of edges, m.***
+    (시작점과 종료점이 같으려면 degree of vertex is even)
+
+  - Basic step : m = 0, A closed trail consisting of one vertex suffices.
+
+  - Induction step :
+
+    - m > 0. With even degrees, each vertex in the nontrivial component of G has degree at least 2. 
+    - We know that when vertex has at least 2 degree, then graph contains a cycle(lemma)
+      - Therefore, the nontrivial component has a cycle C.
+    - Let G' be the graph obtained from G by deleting E(C)
+    - Since C has 0 or 2 edges at each vertex, each component of G' is also an even graph.
+    - Since each component also is connected and has fewer than m edges, ***we can apply the induction hypothesis to conclude that each component of G' has an Eulerian circuit.***
+      - 오일러 써킷(G)이 포함하는 임의의 싸이클 중 하나의 싸이클이 가진 edges 제거하고 남은 그래프 역시 오일러 써킷인가?를 확인
+
+    - To combine these into an Eulerian circuit of G, We traverse C, but when a component of G' is entered for the first time we detour along an Eulerian circuit of that component.
+    - This circuit ends at the vertex where we began the detour. When we complete the traversal of C, we have completed an Eulerian circuit of G.
