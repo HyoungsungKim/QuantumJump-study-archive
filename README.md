@@ -13,4 +13,4 @@ Can i really do it...?
 - Information Theory
 - Algorithm
 - Database System
-- Graph Theory
+- ~~Graph Theory~~ 
