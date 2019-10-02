@@ -173,6 +173,8 @@ Proof)
 
 #### Lemma : If every vertex of a graph G has degree at least 2, then G contains a cycle
 
+- In maximal path, each vertex's in & out, edge of start vertex and end vertex. Therefore each vertex has 2 edges and there is a cycle.
+
 #### Theorem : A graph G is Eulerian
 
 - Nontrivial : any connected~
